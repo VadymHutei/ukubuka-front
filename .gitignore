@@ -1,4 +1,4 @@
-__pycache__/
+/app/config_custom.py
 
 # venv
 /app/bin/
@@ -7,3 +7,5 @@ __pycache__/
 /app/share/
 /app/lib64
 /app/pyvenv.cfg
+
+__pycache__/
