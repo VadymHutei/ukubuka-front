@@ -1,12 +1,14 @@
 import sys
+sys.path.append('core')
 sys.path.append('modules/homepage')
-from view import View
+from instance import Instance
+from view import HomepageView
+import config
 
-class Homepage():
+class Homepage(Instance):
 
     def __init__(self):
-        self.view = View()
-        print('Homepage created')
+        self.view = HomepageView()
 
     def getPage(self):
         return self.view.render()

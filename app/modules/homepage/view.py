@@ -1,9 +1,14 @@
 from flask import render_template
+import config
 
-class View():
+class HomepageView():
 
     def __init__(self):
-        print('View created')
+        # theme = config.CUR_THEME
+        self.template = 'beta/homepage/homepage.html'
+        self.params = {
+            'layout': 'beta/layout/layout.html'
+        }
 
     def render(self):
-        return render_template('homepage.html')
+        return render_template(self.template, **self.params)
