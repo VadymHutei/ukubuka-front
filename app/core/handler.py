@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Instance(ABC):
+class AbstractHandler(ABC):
 
     @abstractmethod
     def getPage(self):
