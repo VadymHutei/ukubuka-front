@@ -9,15 +9,28 @@ class HomepageView(AbstractView):
 
     def __init__(self):
         self.theme = Path(config.SITE_THEME)
-        self.layout_dir = self.theme / 'layout'
-        self.layout = self.layout_dir / 'layout.html'
-        self.template_dir = self.theme / 'homepage'
-        self.template = self.template_dir / 'homepage.html'
         self.params = {
-            'layout': str(self.layout)
+            'layout': self._getLayout()
+        }
+
+    def _getLayout(self):
+        layout_dir = self.theme / 'layout'
+        layout_path = layout_dir / 'layout.html'
+        layout_header_path = layout_dir / 'header.html'
+        return {
+            'dir': str(layout_dir),
+            'path': str(layout_path),
+            'header': str(layout_header_path)
+        }
+
+    def _getTemplate(self, template='homepage'):
+        template_dir = self.theme / template
+        template_path = template_dir / f'{template}.html'
+        return {
+            'dir': str(template_dir),
+            'path': str(template_path),
         }
 
     def render(self):
-        template = str(self.template)
-        params = self.params
-        return render_template(template, **params)
+        template = self._getTemplate()
+        return render_template(template['path'], **self.params)
