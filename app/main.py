@@ -1,12 +1,12 @@
 from flask import Flask, render_template
-from modules.homepage.ctrl import Homepage
+from modules.handlers import Homepage, Shop
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def homepage():
-    inst = Homepage()
-    return inst.getPage()
+    handler = Homepage()
+    return handler.getPage()
 
 @app.route('/shop/', methods=['GET'])
 def shop():
