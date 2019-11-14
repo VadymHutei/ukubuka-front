@@ -1,11 +1,9 @@
 import sys
 sys.path.append('core')
-sys.path.append('modules/homepage')
-from instance import Instance
-from view import HomepageView
-import config
+from core import AbstractHandler
+from modules.views import HomepageView
 
-class Homepage(Instance):
+class Homepage(AbstractHandler):
 
     def __init__(self):
         self.view = HomepageView()
