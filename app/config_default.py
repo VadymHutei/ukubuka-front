@@ -5,6 +5,7 @@ APP_CONFIG = {
 }
 
 SITE_NAME = 'My Site'
+SITE_THEME = 'demo'
 
 DB_PARAMS = {
     'host': 'localhost',
