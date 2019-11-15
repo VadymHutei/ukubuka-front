@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from modules.handlers import Homepage, Shop
+from modules.handlers import Homepage
 
 app = Flask(__name__)
 
