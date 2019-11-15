@@ -1,6 +1,6 @@
 try:
     from config_custom import *
-except:
+except ModuleNotFoundError:
     from config_default import *
 
 # languages
