@@ -1,5 +1,3 @@
-import sys
-sys.path.append('core')
 from core import AbstractHandler
 from modules.views import HomepageView
 
