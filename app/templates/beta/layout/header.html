@@ -12,5 +12,5 @@
             <a href="#">cart</a>
         </div>
     </div>
-    <nav></nav>
+    {% include layout.getComponent('menu').getPath() with context %}
 </header>

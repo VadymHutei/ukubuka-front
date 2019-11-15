@@ -5,7 +5,7 @@
     <title>homepage</title>
 </head>
 <body>
-    {% include layout.header with context %}
+    {% include layout.getComponent('header').getPath() with context %}
     {% block content %}{% endblock %}
     <footer>&copy; 2019 YakSobi</footer>
 </body>
