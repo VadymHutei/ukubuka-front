@@ -1,5 +1,5 @@
 from core import AbstractHandler
-from modules.views import HomepageView
+from views import HomepageView
 
 class Homepage(AbstractHandler):
 
