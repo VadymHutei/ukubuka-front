@@ -3,14 +3,10 @@ import config
 
 class AbstractLayout(ABC):
 
-    def __init__(self, name):
-        self.theme = Path(config.SITE_THEME)
-        self.name = name
-
     @abstractmethod
-    def setPath(self):
+    def getTemplate(self):
         pass
 
     @abstractmethod
-    def getPath(self):
+    def getComponent(self):
         pass

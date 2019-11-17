@@ -1,8 +1,9 @@
 from pathlib import Path
 
 import config
+from core import AbstractTemplate
 
-class Template():
+class Template(AbstractTemplate):
 
     def __init__(self, name, dir_=None):
         self.theme = Path(config.SITE_THEME)

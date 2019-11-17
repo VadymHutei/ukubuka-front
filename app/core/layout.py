@@ -1,6 +1,6 @@
-from core import Template
+from core import AbstractLayout, Template
 
-class Layout():
+class Layout(AbstractLayout):
 
     def __init__(self, name='layout', dir_='layout'):
         self.dir = dir_
