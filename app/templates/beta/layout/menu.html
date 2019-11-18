@@ -1,5 +1,5 @@
 <nav>
-    {% for item in menu: %}
+    {% for item in menu.getItems(): %}
     <a href="{{ item.link }}">{{ item.name }}</a>
     {% endfor %}
 </nav>
