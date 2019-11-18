@@ -13,5 +13,5 @@ class Layout(AbstractLayout):
         if name not in dir(self):
             if dir_ is None:
                 dir_ = self.dir
-            self.header = Template(name, dir_)
-        return self.header
+            self.template = Template(name, dir_)
+        return self.template
