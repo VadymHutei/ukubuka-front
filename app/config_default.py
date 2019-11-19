@@ -1,8 +1,4 @@
-APP_CONFIG = {
-    'debug': True,
-    'host': '0.0.0.0',
-    'port': 80
-}
+MODE = 'dev'
 
 SITE_NAME = 'My Site'
 SITE_THEME = 'demo'
@@ -17,6 +13,8 @@ DB_PARAMS = {
 DB_PREFIX = 'prfx_'
 
 # connect
+CONNECT_TIMEOUT = 5
+READ_TIMEOUT = 5
 CONTENT_SERVICE = {
     'url': 'http://127.0.0.1:5002/'
 }
