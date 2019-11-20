@@ -1,5 +1,16 @@
-<nav>
+<nav class="main_menu">
     {% for item in menu.getItems(): %}
-    <a href="{{ item.link }}">{{ item.name }}</a>
+    <div class="item">
+        <a href="{{ item.link }}">{{ item.name }}</a>
+        {% if 'subitems' in item %}
+        <div class="submenu">
+            {% for subitem in item.subitems %}
+            <div class="subitem">
+                <a href="{{ subitem.link }}">{{ subitem.name }}</a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
     {% endfor %}
 </nav>
