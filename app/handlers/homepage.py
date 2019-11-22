@@ -1,7 +1,7 @@
 from core import AbstractHandler
 from views import HomepageView
 
-class Homepage(AbstractHandler):
+class HomepageHandler(AbstractHandler):
 
     def __init__(self):
         self.view = HomepageView()

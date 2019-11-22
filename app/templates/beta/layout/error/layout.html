@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>error</title>
+</head>
+<body>
+    {% include layout.getComponent('header').getPath() ignore missing with context %}
+    {% block content %}{% endblock %}
+    {% include layout.getComponent('footer').getPath() ignore missing with context %}
+</body>
+</html>

@@ -3,7 +3,7 @@ sys.path.append('core')
 from core import AbstractHandler
 from views import ShopView
 
-class Shop(AbstractHandler):
+class ShopHandler(AbstractHandler):
 
     def __init__(self):
         self.view = ShopView()
