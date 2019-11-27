@@ -1,34 +1,53 @@
 from flask import Flask, render_template, abort
-from handlers import HomepageHandler, InfoHandler, ErrorHandler
+
+from handlers import HomepageHandler, InfoHandler, ErrorHandler, ShopHandler
+
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def homepage():
     handler = HomepageHandler()
-    return handler.getPage()
+    page = handler.getHomePage()
+    if page: return page
+    abort(404)
 
 @app.route('/shop/', methods=['GET'])
 def shop():
-    return 'Shop page'
+    handler = ShopHandler()
+    page = handler.getShopPage()
+    if page: return page
+    abort(404)
 
 @app.route('/shop/<path:category>/', methods=['GET'])
 def catalog(category):
-    return f'catalog page {category}'
+    handler = ShopHandler()
+    page = handler.getCatalogPage(category)
+    if page: return page
+    abort(404)
 
-@app.route('/shop/<string:alias>/<int:id>', methods=['GET'])
-def product(alias, id):
-    return f'product page {alias} {id}'
+@app.route('/shop/<string:alias>', methods=['GET'])
+def productByAlias(alias):
+    handler = ShopHandler()
+    page = handler.getProductCardPage(alias)
+    if page: return page
+    abort(404)
+
+@app.route('/shop/<int:id_>', methods=['GET'])
+def productById(id_):
+    handler = ShopHandler()
+    page = handler.getProductCardPage(id_)
+    if page: return page
+    abort(404)
 
 @app.route('/<string:page>', methods=['GET'])
 def info(page):
-    handler = InfoHandler(page)
-    page, code = handler.getPage()
+    handler = InfoHandler()
+    page = handler.getPage(page)
     if page: return page
-    if code: abort(code)
     abort(404)
 
 @app.errorhandler(404)
 def page_not_found(error):
-    handler = ErrorHandler(404)
-    return handler.getPage()
+    handler = ErrorHandler()
+    return handler.getPage(404)

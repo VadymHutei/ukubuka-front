@@ -1,17 +1,13 @@
-from flask import render_template
-
-from core import AbstractView, Layout, Template
+from core import AbstractView, Layout
 from entities.menus import MainMenu
 
 
 class HomepageView(AbstractView):
 
     def __init__(self):
-        self.params = {
-            'layout': Layout(),
-            'menu': MainMenu()
-        }
+        self._setParam('layout', Layout())
+        self._setParam('menu', MainMenu())
 
     def render(self):
-        template = Template('homepage')
-        return render_template(template.getPath(), **self.params)
+        self._setTemplate('homepage')
+        return self._render()
