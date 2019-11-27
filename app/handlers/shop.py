@@ -1,12 +1,16 @@
-import sys
-sys.path.append('core')
-from core import AbstractHandler
-from views import ShopView
+from views import ShopView, CatalogView, ProductCardView
 
-class ShopHandler(AbstractHandler):
 
-    def __init__(self):
-        self.view = ShopView()
+class ShopHandler():
 
-    def getPage(self):
-        return self.view.render()
+    def getShopPage(self):
+        view = ShopView()
+        return view.render()
+
+    def getCatalogPage(self, category):
+        view = CatalogView()
+        return view.render()
+
+    def getProductCardPage(self, id_):
+        view = ProductCardView()
+        return view.render()
