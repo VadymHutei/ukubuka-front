@@ -1,0 +1,10 @@
+{% extends layout.getTemplate().getPath() %}
+
+{% block content -%}
+
+<h1>Shop</h1>
+{% for section in sections %}
+    <h2>{{ section['name'] }}</h2>
+{% endfor %}
+
+{%- endblock %}
