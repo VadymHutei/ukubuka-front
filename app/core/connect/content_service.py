@@ -18,7 +18,8 @@ class ContentService(AbstractConnect):
                 params=params,
                 timeout = (config.CONNECT_TIMEOUT, config.READ_TIMEOUT),
                 headers = {
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
+                    'language': 'eng'
                 }
             )
         except (requests.exceptions.ConnectTimeout,
