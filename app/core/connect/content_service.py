@@ -2,6 +2,7 @@ import requests
 
 import config
 from core import AbstractConnect
+from errors import NotFoundError
 
 class ContentServiceError(Exception):
     pass
@@ -9,31 +10,26 @@ class ContentServiceError(Exception):
 class ContentService(AbstractConnect):
 
     def __init__(self):
-        self.url = config.CONTENT_SERVICE['url']
+        self._url = config.CONTENT_SERVICE['url']
+        self._timeout = (
+            config.CONNECT_TIMEOUT,
+            config.READ_TIMEOUT
+        )
+        self._headers = {
+            'Accept': 'application/json',
+            'language': config.CURRENT_LANGUAGE
+        }
 
     def get(self, entity, **params):
-        try:
-            response = requests.get(
-                self.url + entity,
-                params=params,
-                timeout = (config.CONNECT_TIMEOUT, config.READ_TIMEOUT),
-                headers = {
-                    'Accept': 'application/json',
-                    'language': 'eng'
-                }
-            )
-        except (requests.exceptions.ConnectTimeout,
-                requests.exceptions.ReadTimeout,
-                requests.exceptions.ConnectionError,
-                requests.exceptions.HTTPError,
-                requests.RequestException) as e:
-            if config.MODE == 'dev':
-                raise e
-            else:
-                return False
+        response = requests.get(
+            self._url + entity,
+            timeout = self._timeout,
+            headers = self._headers,
+            params=params
+        )
+        if response.status_code == 200:
+            return response.json()
+        if response.status_code == 404:
+            raise NotFoundError
         else:
-            if response.status_code == 200:
-                return response.json()
-            else:
-                print(response.status_code)
-                raise ContentServiceError
+            raise ContentServiceError
