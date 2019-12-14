@@ -1,0 +1,2 @@
+class ContentServiceError(Exception):
+    pass
