@@ -7,3 +7,4 @@ except ModuleNotFoundError:
 LANGUAGES = []
 LANGUAGES_DATA = []
 DEFAULT_LANGUAGE = False
+CURRENT_LANGUAGE = 'eng'

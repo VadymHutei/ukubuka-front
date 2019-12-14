@@ -3,15 +3,6 @@ MODE = 'dev'
 SITE_NAME = 'My Site'
 SITE_THEME = 'demo'
 
-DB_PARAMS = {
-    'host': 'localhost',
-    'user': 'user_name',
-    'password': 'password',
-    'db': 'db_name',
-    'charset': 'utf8mb4'
-}
-DB_PREFIX = 'prfx_'
-
 # connect
 CONNECT_TIMEOUT = 5
 READ_TIMEOUT = 5
