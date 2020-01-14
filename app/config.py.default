@@ -27,3 +27,9 @@ SALT_AVAILABLE_CHARACTERS = '1234567890abcdefghilklmnopqrstuvwxyzABCDEFGHIJKLMNO
 
 # users groups
 USERS_GROUPS = {1: 'admin', 2: 'customer'}
+
+# languages
+LANGUAGES = []
+LANGUAGES_DATA = []
+DEFAULT_LANGUAGE = False
+CURRENT_LANGUAGE = 'eng'

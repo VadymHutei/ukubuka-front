@@ -1,6 +1,6 @@
-/.vscode/
+/app/config.py
 
-__pycache__/
+/app/*.css.map
 
 /app/bin/
 /app/include/
@@ -9,6 +9,6 @@ __pycache__/
 /app/lib64
 /app/pyvenv.cfg
 
-/app/config_custom.py
+/.vscode/
 
-*.css.map
+__pycache__/
