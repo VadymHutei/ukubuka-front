@@ -10,3 +10,5 @@ __pycache__/
 /app/pyvenv.cfg
 
 /app/config_custom.py
+
+*.css.map
