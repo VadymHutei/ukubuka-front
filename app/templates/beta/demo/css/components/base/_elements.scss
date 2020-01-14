@@ -1,0 +1,31 @@
+.select {
+    position: relative;
+    .options {
+        display: none;
+        position: absolute;
+        left: 0;
+    }
+    .option {}
+    &.check {
+        .selected {
+            cursor: pointer;
+        }
+        .select_state {
+            display: none;
+            &:checked {
+                & ~ .options {
+                    display: block;
+                }
+            }
+        }
+    }
+    &.hover {
+        .selected {
+            &:hover {
+                & ~ .options {
+                    display: block;
+                }
+            }
+        }
+    }
+}

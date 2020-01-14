@@ -1,0 +1,24 @@
+html, head, body, header, main, footer, section, div, h1, h2, h3, h4, h5, h6 {
+  display: block;
+  margin: 0;
+  padding: 0; }
+
+.header_elements .element.account {
+  background-image: url("images/icons/account.png"); }
+
+.select {
+  position: relative; }
+  .select .options {
+    display: none;
+    position: absolute;
+    left: 0; }
+  .select.check .selected {
+    cursor: pointer; }
+  .select.check .select_state {
+    display: none; }
+    .select.check .select_state:checked ~ .options {
+      display: block; }
+  .select.hover .selected:hover ~ .options {
+    display: block; }
+
+/*# sourceMappingURL=main.css.map */
