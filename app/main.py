@@ -22,21 +22,21 @@ def shop():
 @app.route('/shop/<path:category>/', methods=['GET'])
 def catalog(category):
     handler = CatalogHandler()
-    page = handler.getCatalogPage(category)
+    page = handler.getCatalogPage(category=category)
     if page: return page
     abort(404)
 
 @app.route('/shop/<string:alias>', methods=['GET'])
 def productByAlias(alias):
     handler = ProductCardHandler()
-    page = handler.getProductCardPage(alias)
+    page = handler.getProductCardPage(alias=alias)
     if page: return page
     abort(404)
 
 @app.route('/shop/<int:id_>', methods=['GET'])
 def productById(id_):
-    handler = ShopHandler()
-    page = handler.getProductCardPage(id_)
+    handler = ProductCardHandler()
+    page = handler.getProductCardPage(id_=id_)
     if page: return page
     abort(404)
 
