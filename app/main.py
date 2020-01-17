@@ -1,6 +1,6 @@
 from flask import Flask, render_template, abort
 
-from handlers import HomepageHandler, InfoHandler, ErrorHandler, ShopHandler
+from handlers import *
 
 
 app = Flask(__name__)
@@ -21,14 +21,14 @@ def shop():
 
 @app.route('/shop/<path:category>/', methods=['GET'])
 def catalog(category):
-    handler = ShopHandler()
+    handler = CatalogHandler()
     page = handler.getCatalogPage(category)
     if page: return page
     abort(404)
 
 @app.route('/shop/<string:alias>', methods=['GET'])
 def productByAlias(alias):
-    handler = ShopHandler()
+    handler = ProductCardHandler()
     page = handler.getProductCardPage(alias)
     if page: return page
     abort(404)
