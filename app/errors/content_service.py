@@ -1,2 +1,5 @@
-class ContentServiceError(Exception):
+from core import Error
+
+
+class ContentServiceError(Error):
     pass
