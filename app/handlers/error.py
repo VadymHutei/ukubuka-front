@@ -3,7 +3,9 @@ from views import ErrorView
 
 class ErrorHandler():
 
+    def __init__(self):
+        self._view = ErrorView()
+
     def getPage(self, code):
         page = str(code)
-        view = ErrorView()
-        return view.render(page=page)
+        return self._view.render(page=page)

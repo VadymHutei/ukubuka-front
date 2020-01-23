@@ -6,9 +6,10 @@ class ShopHandler():
 
     def __init__(self):
         self._model = ShopModel()
+        self._view = ShopView()
 
     def getShopPage(self):
-        view = ShopView()
         sections = self._model.getSections()
-        view.setParam('sections', sections)
-        return view.render()
+        self._view.setParam('sections', sections)
+        page = self._view.render()
+        return page

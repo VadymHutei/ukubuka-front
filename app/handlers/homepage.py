@@ -3,6 +3,9 @@ from views import HomepageView
 
 class HomepageHandler():
 
+    def __init__(self):
+        self._view = HomepageView()
+
     def getHomePage(self):
-        view = HomepageView()
-        return view.render()
+        page = self._view.render()
+        return page
