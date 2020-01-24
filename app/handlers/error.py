@@ -9,3 +9,6 @@ class ErrorHandler():
     def getPage(self, code):
         page = str(code)
         return self._view.render(page=page)
+
+    def getHandler(self):
+        return lambda e: (e.description, e.code)

@@ -1,9 +1,13 @@
 from flask import Flask, render_template, abort
 
 from handlers import *
+from core import Error
 
 
 app = Flask(__name__)
+
+error_handler = ErrorHandler()
+app.register_error_handler(Error, error_handler.getHandler())
 
 @app.route('/', methods=['GET'])
 def homepage():
@@ -34,8 +38,3 @@ def productById(id_):
 def info(page):
     handler = InfoHandler()
     return handler.getPage(page)
-
-@app.errorhandler(404)
-def page_not_found(error):
-    handler = ErrorHandler()
-    return handler.getPage(404)
