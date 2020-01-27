@@ -22,6 +22,3 @@ class Collection():
     def _createEntity(self, data):
         entity = self._domain(data)
         self._addEntity(entity)
-
-    def toList(self):
-        return [entity.toList() for entity in self._entities]
