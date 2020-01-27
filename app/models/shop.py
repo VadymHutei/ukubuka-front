@@ -9,5 +9,5 @@ class ShopModel():
 
     def getSections(self):
         data = self.cs.get('categories', active='y', root='y')
-        categories = Category.createCollection(data)
-        return categories
+        sections = Category.createCollection(data)
+        return sections
