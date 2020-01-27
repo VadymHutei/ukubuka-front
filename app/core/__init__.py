@@ -5,6 +5,7 @@ from core.abstract_view import AbstractView
 from core.abstract_layout import AbstractLayout
 from core.abstract_connect import AbstractConnect
 
+from core.validator import validator
 from core.layout import Layout
 from core.menu import Menu
 from core.response import Response
