@@ -5,6 +5,12 @@ class Collection():
         self._entities = []
         self._createEntities(data)
 
+    def __len__(self):
+        return len(self._entities)
+
+    def __iter__(self):
+        return iter(self._entities)
+
     def _addEntity(self, entity):
         if isinstance(entity, self._domain):
             self._entities.append(entity)
