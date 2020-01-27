@@ -8,15 +8,17 @@ domains = {
             'parent': m.categoryID,
             'name': m.categoryName,
             'order': m.order,
-            'is_activem.': m.active
+            'is_active': m.active
         }
     }
 }
 
-def getFieldsFor(domain):
+def getFieldsFor(domain_name):
+    domain = domain_name.lower()
     if domain not in domains: return []
     return domains[domain]['methods'].keys()
 
-def getMethodsFor(domain):
+def getMethodsFor(domain_name):
+    domain = domain_name.lower()
     if domain not in domains: return {}
     return domains[domain]['methods']
