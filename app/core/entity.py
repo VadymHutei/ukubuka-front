@@ -3,11 +3,11 @@ from core import validator
 
 class Entity():
 
+    _validate_methods = {}
+    _fields = set()
+
     def __init__(self, data):
-        self._name = self.__class__.__name__
-        self._fields = validator.getFieldsFor(self._name)
-        self._validate_methods = validator.getFieldsFor(self._name)
-        self._data = {}
+        self._data = {field: None for field in self._fields}
         self._fillFields(data)
 
     @classmethod
