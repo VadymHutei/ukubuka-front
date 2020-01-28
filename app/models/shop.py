@@ -1,5 +1,5 @@
 from core.connect import ContentService
-from domains import Category
+from domains import CategoryEntity
 
 
 class ShopModel():
@@ -9,5 +9,5 @@ class ShopModel():
 
     def getSections(self):
         data = self.cs.get('categories', active='y', root='y')
-        sections = Category.createCollection(data)
+        sections = CategoryEntity.createCollection(data)
         return sections

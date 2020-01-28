@@ -1,7 +1,7 @@
-from entities import Domain
+from core import Entity
 
 
-class Category(Domain):
+class CategoryEntity(Entity):
 
     def __init__(self, data):
         super().__init__(data)

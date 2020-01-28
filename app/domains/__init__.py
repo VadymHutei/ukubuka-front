@@ -1,1 +1,1 @@
-from domains.category import Category
+from domains.category import CategoryEntity
