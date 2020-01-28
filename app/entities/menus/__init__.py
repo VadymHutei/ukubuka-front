@@ -1,1 +1,0 @@
-from entities.menus.main import MainMenu
