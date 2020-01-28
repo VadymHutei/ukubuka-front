@@ -1,3 +1,5 @@
+from core.entity import Entity
+
 from core.abstract_handler import AbstractHandler
 from core.abstract_template import AbstractTemplate
 from core.template import Template

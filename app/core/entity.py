@@ -1,8 +1,7 @@
-from entities import Collection
 from core import validator
 
 
-class Domain():
+class Entity():
 
     def __init__(self, data):
         self._name = self.__class__.__name__
@@ -13,14 +12,16 @@ class Domain():
 
     @classmethod
     def createCollection(cls, data):
-        collection = Collection(cls, data)
-        return collection
+        entityCollection = []
+        for el in data:
+            entity = cls(el)
+            entityCollection.append(entity)
+        return entityCollection
 
     def _setField(self, field, value):
         if field not in self._fields: return False
         if not self._validate_methods[field](value): return False
         self._data[field] = value
-
 
     def _fillFields(self, data):
         for field in data:
