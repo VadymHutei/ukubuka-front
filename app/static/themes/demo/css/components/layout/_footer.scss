@@ -1,0 +1,10 @@
+footer {
+    .copyright_block {
+        margin: 0.5em;
+        text-align: center;
+        .copyright_text {
+            font-size: $text_size_copyright;
+            color: $text_color_copyright;
+        }
+    }
+}

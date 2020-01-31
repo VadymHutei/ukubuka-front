@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+html, head, body, header, main, footer, section, div, h1, h2, h3, h4, h5, h6 { display: block; margin: 0; padding: 0; }
+
+html { height: 100%; font-size: 16px; font-family: "Roboto", sans-serif; }
+html body { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column; flex-flow: column; min-height: 100%; }
+html body main { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; }
+
+section { margin: 0 auto; }
+section .content { margin: 0 auto; }
+
+.main_menu { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+.main_menu .menu_item_block { position: relative; }
+.main_menu .menu_item_block:hover .submenu_block { display: -webkit-box; display: -ms-flexbox; display: flex; }
+.main_menu .menu_item_block a { text-decoration: none; color: initial; }
+.main_menu .menu_item { padding: 1em 1.2em; }
+.main_menu .menu_item:hover .menu_item_text { text-decoration: underline; }
+.main_menu .menu_item_text { text-transform: uppercase; font-size: 1.2em; line-height: 1em; }
+.main_menu .submenu_block { display: none; position: absolute; top: menu_item_vertical_parringmenu_item_line_height; left: 0; background-color: #fff; }
+
+.select { position: relative; }
+.select .options { display: none; position: absolute; left: 0; }
+.select.check .selected { cursor: pointer; }
+.select.check .select_state { display: none; }
+.select.check .select_state:checked ~ .options { display: block; }
+.select.hover .selected:hover ~ .options { display: block; }
+
+header .firs_row { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+footer .copyright_block { margin: 0.5em; text-align: center; }
+footer .copyright_block .copyright_text { font-size: 0.8em; color: #555; }
+
+section.shop .content { max-width: 50em; }

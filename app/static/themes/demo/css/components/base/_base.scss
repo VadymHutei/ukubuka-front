@@ -1,0 +1,71 @@
+html, head, body, header, main, footer, section, div, h1, h2, h3, h4, h5, h6 {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    font-size: $base_font_size;
+    font-family: $base_font_family;
+    
+    body {
+        display: flex;
+        flex-flow: column;
+        min-height: 100%;
+        header {}
+        main {
+            flex-grow: 1;
+        }
+        footer {}
+    }
+
+}
+
+section {
+    margin: 0 auto;
+    .content {
+        margin: 0 auto;
+    }
+}
+
+.main_menu {
+    $menu_item_vertical_parring: 1em;
+    $menu_item_line_height: 1em;
+    $submenu_top: menu_item_vertical_parring + menu_item_line_height;
+
+    display: flex;
+    justify-content: center;
+    .menu_item_block {
+        position: relative;
+        &:hover {
+            .submenu_block {
+                display: flex;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: initial;
+        }
+    }
+    .menu_item {
+        padding: $menu_item_vertical_parring 1.2em;
+        &:hover {
+            .menu_item_text {
+                text-decoration: underline;
+            }
+        }
+    }
+    .menu_item_text {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        line-height: 1em;
+    }
+    .submenu_block {
+        display: none;
+        position: absolute;
+        top: $submenu_top;
+        left: 0;
+        background-color: $color_white;
+    }
+}
