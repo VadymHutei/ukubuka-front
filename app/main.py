@@ -11,7 +11,7 @@ app.register_error_handler(Error, error_handler.getHandler())
 
 @app.route('/', methods=['GET'])
 def homepage():
-    handler = HomepageHandler()
+    handler = HomePageHandler()
     return handler.getHomePage()
 
 @app.route('/shop/', methods=['GET'])
@@ -36,5 +36,5 @@ def productById(id_):
 
 @app.route('/<string:page>', methods=['GET'])
 def info(page):
-    handler = InfoHandler()
+    handler = InfoPageHandler()
     return handler.getPage(page)
