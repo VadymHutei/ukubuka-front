@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>homepage</title>
-</head>
-<body>
-    {% include layout.getComponent('header').getPath() ignore missing with context %}
-    {% block content %}{% endblock %}
-    {% include layout.getComponent('footer').getPath() ignore missing with context %}
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ukubuka</title>
+        <link rel="stylesheet" type="text/css" href="../../../static/themes/demo/css/main.min.css">
+    </head>
+    <body>
+        {% include layout.header ignore missing with context %}
+        {% include layout.menu ignore missing with context %}
+        {% block content %}{% endblock %}
+        {% include layout.footer ignore missing with context %}
+    </body>
 </html>

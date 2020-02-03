@@ -2,9 +2,22 @@
 
 {% block content -%}
 
-<h1>Shop</h1>
-{% for section in sections %}
-    <h2>{{ section['name'] }}</h2>
-{% endfor %}
+<main>
+    <section>
+        <div class="breadcrumbs_block">
+            <span class="breadcrumbs_text">main / shop</span>
+        </div>
+        <h1>Shop</h1>
+        <div class="content">
+            {% for section in sections %}
+            <div class="shop_section">
+                <h2 class="section_name">{{ section.name }}</h2>
+                <img src="{{ section.img }}" alt="{{ section.name }}" title="{{ section.name }}">
+                <a href="{{ section.link }}">go to the section</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
 
 {%- endblock %}

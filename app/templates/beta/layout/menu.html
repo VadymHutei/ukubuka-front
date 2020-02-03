@@ -1,16 +1,23 @@
-<nav class="main_menu">
-    {% for item in menu.getItems(): %}
-    <div class="item">
-        <a href="{{ item.link }}">{{ item.name }}</a>
-        {% if 'subitems' in item %}
-        <div class="submenu">
-            {% for subitem in item.subitems %}
-            <div class="subitem">
-                <a href="{{ subitem.link }}">{{ subitem.name }}</a>
+<nav>
+    <div class="main_menu">
+        {% for item in main_menu: %}
+        <div class="menu_item_block">
+            <a href="{{ item.link }}">
+                <div class="menu_item">
+                    <span class="menu_item_text">{{ item.name }}</span>
+                </div>
+            </a>
+            {% if 'submenu' in item: %}
+            <div class="submenu_block">
+                {% for subitem in item.subitems %}
+                <a href="{{ subitem.link }}">
+                    <div class="menu_item">
+                        <span class="menu_item_text">{{ subitem.name }}</span>
+                    </div>
+                </a>
             </div>
-            {% endfor %}
+            {% endif %}
         </div>
-        {% endif %}
+        {% endfor %}
     </div>
-    {% endfor %}
 </nav>

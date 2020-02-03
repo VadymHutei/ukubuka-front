@@ -1,16 +1,22 @@
 <header>
-    <div class="top">
-        <div class="title">
-            <h1>Ukubuka</h1>
+    <div class="firs_row">
+        <div class="language select check">
+            <label for="language_select_state">
+                <span class="option selected">EN</span>
+            </label>
+            <input id="language_select_state" class="select_state" type="checkbox">
+            <div class="options">
+                <a href="ua">
+                    <div class="option">
+                        UA
+                    </div>
+                </a>
+            </div>
         </div>
-        <div class="search">
-            <input type="search" name="search">
-        </div>
-        <div class="control">
-            <a href="#">call</a>
-            <a href="#">account</a>
-            <a href="#">cart</a>
-        </div>
+        <a href="/">
+            <div class="site_title_block">
+                <span class="site_title_text">Ukubuka</span>
+            </div>
+        </a>
     </div>
-    {% include layout.getComponent('menu').getPath() ignore missing with context %}
 </header>
