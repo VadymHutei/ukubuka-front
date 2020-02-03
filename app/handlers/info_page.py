@@ -1,12 +1,11 @@
-from views import InfoView
+from views import InfoPageView
 
 
-class InfoHandler():
+class InfoPageHandler():
 
     def __init__(self):
-        self._view = InfoView()
+        self._view = InfoPageView()
 
     def getPage(self, page):
         page = self._view.render()
         return page
-

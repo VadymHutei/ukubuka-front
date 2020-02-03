@@ -1,10 +1,10 @@
-from views import HomepageView
+from views import HomePageView
 
 
-class HomepageHandler():
+class HomePageHandler():
 
     def __init__(self):
-        self._view = HomepageView()
+        self._view = HomePageView()
 
     def getHomePage(self):
         page = self._view.render()
