@@ -1,13 +1,7 @@
-from core import AbstractView, Layout
-from entities.menus import MainMenu
+from core import View
 
 
-class CatalogView(AbstractView):
+class CatalogView(View):
 
     def __init__(self):
-        self.setParam('layout', Layout())
-        self.setParam('menu', MainMenu())
-
-    def render(self):
-        self._setTemplate('shop/catalog')
-        return self._render()
+        self._setTemplate('beta/shop/shop.html')
