@@ -1,16 +1,18 @@
 from core import Entity
-from core.validator.common import order, active
-from core.validator.category import categoryID, categoryName
+from core.validator import (
+    common as v_common,
+    category as v_category,
+)
 
 
 class CategoryEntity(Entity):
 
     _validate_methods = {
-        'id': categoryID,
-        'parent': categoryID,
-        'name': categoryName,
-        'order': order,
-        'is_active': active
+        'id': v_category.categoryID,
+        'parent': v_category.categoryID,
+        'name': v_category.categoryName,
+        'order': v_common.order,
+        'is_active': v_common.active
     }
     _fields = set(_validate_methods.keys())
 
