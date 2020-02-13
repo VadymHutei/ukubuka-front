@@ -4,10 +4,8 @@ from domains import CategoryEntity
 
 class ShopModel():
 
-    def __init__(self):
-        self.cs = ContentService()
-
     def getSections(self):
-        data = self.cs.get('categories', active='y', root='y')
+        cs = ContentService()
+        data = cs.get('categories', active='y', parent='null')
         sections = CategoryEntity.createCollection(data)
         return sections
