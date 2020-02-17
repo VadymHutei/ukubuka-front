@@ -11,6 +11,7 @@ class CategoryEntity(Entity):
         'id': v_category.categoryID,
         'parent': v_category.categoryID,
         'name': v_category.categoryName,
+        'link': v_common.link,
         'order': v_common.order,
         'is_active': v_common.active
     }
