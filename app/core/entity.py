@@ -10,6 +10,9 @@ class Entity():
         self._data = {field: None for field in self._fields}
         self._fillFields(data)
 
+    def __getattr__(self, name):
+        return self._data.get(name, None)
+
     @classmethod
     def createCollection(cls, data):
         entityCollection = []
@@ -27,3 +30,9 @@ class Entity():
         for field in data:
             value = data[field]
             self._setField(field, value)
+
+    def setField(self, field, value):
+        self._data[field] = value
+
+    def getFields(self):
+        return self._data
