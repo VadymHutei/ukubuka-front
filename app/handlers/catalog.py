@@ -10,6 +10,7 @@ class CatalogHandler():
 
     def getCatalogPage(self, category=None):
         products = self._model.getCategoryProducts(category)
+        self._view.setLayout('beta/layout/layout.html')
         self._view.setParam('products', products)
         page = self._view.render()
         return page
