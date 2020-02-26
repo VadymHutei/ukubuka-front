@@ -19,22 +19,13 @@ def shop():
     handler = ShopHandler()
     return handler.getShopPage()
 
-@app.route('/shop/<path:category>/', methods=['GET'])
-def catalog(category):
+@app.route('/shop/<path:path>/', methods=['GET'])
+def catalog(path):
     handler = CatalogHandler()
-    return handler.getCatalogPage(category=category)
+    return handler.getCatalogPage(path)
 
-@app.route('/shop/<string:alias>', methods=['GET'])
-def productByAlias(alias):
-    handler = ProductCardHandler()
-    return handler.getProductCardPage(alias=alias)
-
-@app.route('/shop/<int:id_>', methods=['GET'])
-def productById(id_):
-    handler = ProductCardHandler()
-    return handler.getProductCardPage(id_=id_)
-
-@app.route('/<string:page>', methods=['GET'])
-def info(page):
-    handler = InfoPageHandler()
-    return handler.getPage(page)
+@app.route('/shop/<path:path>/<string:alias>', methods=['GET'])
+@app.route('/shop/<path:path>/<int:product_id>', methods=['GET'])
+def product(path, alias=None, product_id=None):
+    handler = ProductHandler()
+    return handler.getProductPage(path, alias, product_id)
