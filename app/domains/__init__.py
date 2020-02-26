@@ -1,1 +1,0 @@
-from domains.category.category_entity import CategoryEntity
