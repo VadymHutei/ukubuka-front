@@ -1,5 +1,5 @@
 from core.connect import ContentService
-from domains import CategoryEntity
+from entities import CategoryEntity
 
 
 class ShopModel():
