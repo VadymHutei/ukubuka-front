@@ -5,7 +5,9 @@
 <main>
     <section>
         <div class="breadcrumbs_block">
-            <span class="breadcrumbs_text">main / shop</span>
+            <span class="breadcrumbs_text">
+                <a href="/">main</a> / <a href="/shop/">shop</a>
+            </span>
         </div>
         <h1>Shop</h1>
         <div class="content">
@@ -13,7 +15,8 @@
             <div class="shop_section">
                 <h2 class="section_name">{{ section.name }}</h2>
                 <img src="http://placekitten.com/200/300" alt="{{ section.name }}" title="{{ section.name }}">
-                <a href="{{ section.link }}">go to the section</a>
+                <p>{{ section.description }}</p>
+                <a href="{{ section.alias }}">go to the section</a>
             </div>
             {% endfor %}
         </div>
