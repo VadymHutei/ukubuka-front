@@ -1,0 +1,3 @@
+[submodule "app\\ucore"]
+	path = app\\ucore
+	url = git@github.com:VadymHutei/ukubuka-core.git
